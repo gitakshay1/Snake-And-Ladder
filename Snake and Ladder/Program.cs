@@ -7,6 +7,7 @@ namespace Snake_And_Ladder
         static void Main(string[] args)
         {
             Player player= new Player();
+            player.RollDice();
         }
     }
 }
