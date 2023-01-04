@@ -8,7 +8,7 @@ namespace Snake_and_Ladder
 {
     public class Player
     {
-        int Position1 = 0, Player1;
+        int Position1 = 0, Player1,Num_Dice_Roll=0;
         public void RollDice()
         {
             Random random= new Random();
@@ -28,18 +28,17 @@ namespace Snake_and_Ladder
                         }
                         break;
                     case 2:
-                        if(Position1>0)
+                        Position1 -= Player1;
+                        if (Position1 < 0)
                         {
-                            Position1 -= Player1;
-                        }
-                        else
-                        {
-                            Position1 = 0;
+                            Position1 =0;
                         }
                         break;
                 }
+                Num_Dice_Roll++;
+                Console.WriteLine("Player1 postion at" + Position1);
             }
-            Console.WriteLine("Player1 won At Position" + Position1);
+            Console.WriteLine("\nPlayer1 won At Position" + Position1+"\nNumber of Dice rolls to win"+Num_Dice_Roll);
         }
     }
 }
